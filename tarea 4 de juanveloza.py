@@ -19,3 +19,10 @@ class ReservaInvalidaError(SoftwareFJError):
 class ServicioNoDisponibleError(SoftwareFJError):
     """Se lanza cuando un servicio solicitado no está activo o disponible."""
     pass
+class EntidadSistema(ABC):
+    """Clase abstracta para representar entidades generales del sistema."""
+    
+    @abstractmethod
+    def obtener_detalles(self):
+        """Método obligatorio para todas las clases derivadas."""
+        pass
