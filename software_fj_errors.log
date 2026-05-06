@@ -1,0 +1,9 @@
+2026-05-05 21:16:04,806 - ERROR - Error en validación: La duración debe ser mayor a 0 días.
+2026-05-05 21:16:04,820 - CRITICAL - Fallo crítico inesperado: Los datos de la reserva están vacíos.
+2026-05-05 21:16:04,820 - ERROR - SIM 3 - Error capturado: Ocurrió un fallo técnico interno.
+2026-05-05 21:16:04,821 - ERROR - Error en validación: La duración debe ser mayor a 0 días.
+2026-05-05 21:16:04,834 - ERROR - SIM 6 - Servicio no disponible: El servicio de habitaciones está fuera de línea.
+2026-05-05 21:16:15,234 - ERROR - SIM 6 - Servicio no disponible: El servicio de habitaciones está fuera de línea.
+2026-05-05 21:17:44,318 - ERROR - Error en validación: La duración debe ser mayor a 0 días.
+2026-05-05 21:18:11,947 - ERROR - Error en validación: La duración debe ser mayor a 0 días.
+2026-05-05 21:18:11,947 - ERROR - SIM 12 - Error encadenado: Fallo crítico del sistema
