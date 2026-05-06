@@ -63,3 +63,11 @@ def ejecutar_simulacion_operacion(datos_reserva):
     finally:
         # Se ejecuta siempre, haya error o no
         print("Cerrando sesión de usuario y limpiando recursos...")
+if __name__ == "__main__":
+    # Simulación 1: Caso con error (Días inválidos)
+    test_error = {"cliente": "Juan", "dias": -1}
+    ejecutar_simulacion_operacion(test_error)
+    
+    # Simulación 2: Caso exitoso
+    test_exito = {"cliente": "Sebastian", "dias": 5}
+    ejecutar_simulacion_operacion(test_exito)
