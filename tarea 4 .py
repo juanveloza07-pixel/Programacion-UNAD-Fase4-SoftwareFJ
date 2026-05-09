@@ -8,3 +8,10 @@ logging.basicConfig(
     filename='sistema_reservas.log',
     filemode='a'
 )
+class ReservaError(Exception):
+    """Clase base para excepciones del sistema."""
+    pass
+
+class ValidacionDatoError(ReservaError):
+    """Error cuando un dato ingresado no cumple el formato o rango."""
+    pass
