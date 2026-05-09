@@ -75,3 +75,36 @@ class Reserva:
             print(f"- {s._nombre_servicio}: ${costo}")
         print(f"TOTAL A PAGAR: ${total}")
         logging.info(f"Reserva procesada para {self.cliente.nombre} por un total de ${total}")
+def ejecutar_sistema():
+    try:
+        print("Iniciando sistema de reservas...")
+        
+        # Creación de objetos
+        usuario = Cliente("Juan Sebastian", "12345")
+        mi_reserva = Reserva(usuario)
+
+        # Agregando servicios (Demostración de Polimorfismo)
+        sala = ReservaSala(horas=3)
+        equipos = AlquilerEquipo(cantidad_equipos=2)
+
+        mi_reserva.agregar_servicio(sala)
+        mi_reserva.agregar_servicio(equipos)
+
+        mi_reserva.mostrar_resumen()
+
+    except ValidacionDatoError as e:
+        print(f"Error de validación: {e}")
+        logging.error(f"Error de validación: {e}", exc_info=True)
+    
+    except Exception as e:
+        print(f"Ocurrió un error inesperado: {e}")
+        logging.critical("Error crítico en el sistema", exc_info=True)
+    
+    else:
+        print("Reserva completada exitosamente sin errores.")
+    
+    finally:
+        print("Cerrando sesión del sistema.")
+
+if __name__ == "__main__":
+    ejecutar_sistema()
