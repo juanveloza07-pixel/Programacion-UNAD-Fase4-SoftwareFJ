@@ -46,3 +46,32 @@ class ReservaSala(Servicio):
         # Sobrescritura de método
         return self._costo_base * self.__horas
 
+class AlquilerEquipo(Servicio):
+    def __init__(self, cantidad_equipos):
+        super().__init__("Alquiler de Equipo", 20.0)
+        self.__cantidad = cantidad_equipos
+
+    def calcular_costo(self):
+        return self._costo_base * self.__cantidad
+
+class Reserva:
+    """Clase que integra Cliente y Servicios."""
+    def __init__(self, cliente):
+        self.cliente = cliente
+        self.servicios = []
+        self.fecha = datetime.now()
+
+    def agregar_servicio(self, servicio):
+        if not isinstance(servicio, Servicio):
+            raise TypeError("El objeto debe ser una instancia de Servicio")
+        self.servicios.append(servicio)
+
+    def mostrar_resumen(self):
+        total = 0
+        print(f"--- Resumen de Reserva: {self.cliente.nombre} ---")
+        for s in self.servicios:
+            costo = s.calcular_costo()
+            total += costo
+            print(f"- {s._nombre_servicio}: ${costo}")
+        print(f"TOTAL A PAGAR: ${total}")
+        logging.info(f"Reserva procesada para {self.cliente.nombre} por un total de ${total}")
